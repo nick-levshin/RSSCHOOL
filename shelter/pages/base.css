@@ -1,0 +1,21 @@
+@import url('../assets/fonts/Arial/style.css');
+@import url('../assets/fonts/Georgia/style.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ARIAL;
+  font-size: 15px;
+  line-height: 24px;
+  color: #cdcdcd;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
