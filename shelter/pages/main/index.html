@@ -19,19 +19,23 @@
       <header class="header">
         <div class="container">
           <div class="header-box">
-            <div class="header-logo">
+            <a href="./index.html" class="header-logo">
               <div class="header-logo__title">Cozy House</div>
               <div class="header-logo__subtitle">
                 Shelter for pets in Boston
               </div>
-            </div>
+            </a>
             <nav class="header-nav">
               <ul class="header-menu">
                 <li class="header-menu__item">
-                  <a href="#" class="header-menu__link">About the shelter</a>
+                  <a href="#" class="header-menu__link active"
+                    >About the shelter</a
+                  >
                 </li>
                 <li class="header-menu__item">
-                  <a href="#" class="header-menu__link">Our pets</a>
+                  <a href="../pets/index.html" class="header-menu__link"
+                    >Our pets</a
+                  >
                 </li>
                 <li class="header-menu__item">
                   <a href="#" class="header-menu__link">Help the shelter</a>
@@ -56,10 +60,136 @@
               </p>
               <button class="main-info__button button">Make a friend</button>
             </div>
-            <img src="../../assets/images/dog.png" alt="" class="main-dog" />
+            <img src="../../assets/images/dog.png" alt="dog" class="main-dog" />
           </div>
         </div>
       </main>
     </div>
+
+    <section class="about">
+      <div class="container">
+        <div class="about-box">
+          <img
+            src="../../assets/images/pets.png"
+            alt="pets"
+            class="about-image"
+          />
+          <div class="about-information">
+            <h2 class="about-information__title">
+              About the shelter “Cozy House”
+            </h2>
+            <p class="about-information__text">
+              Currently we have 121 dogs and 342 cats on our hands and
+              statistics show that only 20% of them will find a family. The
+              others will continue to live with us and will be waiting for a
+              lucky chance to become dearly loved.
+            </p>
+            <p class="about-information__text">
+              We feed our wards with the best food and make sure that they do
+              not get sick, feel comfortable (including psychologically) and
+              well. We are supported by 87 volunteers and 28 employees of
+              various skill levels. About 12% of the animals are taken by the
+              shelter staff. Taking care of the animals, they become attached to
+              the pets and would hardly ever leave them alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pets">
+      <div class="container">
+        <h2 class="pets-title">Our friends who<br />are looking for a house</h2>
+        <div class="pets-inner">
+          <button class="pets-arrow left" onclick="prev()">
+            <img src="../../assets/images/arrow-left.svg" alt="left" />
+          </button>
+          <div class="pets-wrapper">
+            <div class="pets-slider">
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-katrine.jpg"
+                  alt="katrine"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Katrine</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-jennifer.jpg"
+                  alt="jennifer"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Jennifer</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-woody.jpg"
+                  alt="woody"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Woody</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-katrine.jpg"
+                  alt="katrine"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Katrine</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-jennifer.jpg"
+                  alt="jennifer"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Jennifer</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-woody.jpg"
+                  alt="woody"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Woody</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-katrine.jpg"
+                  alt="katrine"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Katrine</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+              <div class="pets-slider__item">
+                <img
+                  src="../../assets/images/pets-jennifer.jpg"
+                  alt="jennifer"
+                  class="pets-slider__image"
+                />
+                <p class="pets-slider__title">Jennifer</p>
+                <button class="pets-slider__button button">Learn more</button>
+              </div>
+            </div>
+          </div>
+          <button class="pets-arrow right" onclick="next()">
+            <img src="../../assets/images/arrow-right.svg" alt="right" />
+          </button>
+        </div>
+        <a class="pets-link" href="../pets/index.html">
+          <button class="pets-button button">Get to know the rest</button>
+        </a>
+      </div>
+    </section>
+
+    <script src="./scripts.js"></script>
   </body>
 </html>

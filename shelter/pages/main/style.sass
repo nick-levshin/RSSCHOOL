@@ -3,6 +3,9 @@
 $primary: #F1CDB3
 $primary-light: #FDDCC4
 
+a
+  text-decoration: none
+
 .button
   font-size: 17px
   line-height: 130%
@@ -17,6 +20,17 @@ $primary-light: #FDDCC4
   &:hover
     cursor: pointer
     background-color: $primary-light
+
+h2
+  font-family: Georgia
+  font-weight: 400
+  letter-spacing: 0.06em
+  font-size: 35px
+  line-height: 130%
+
+section 
+  padding-top: 80px
+  padding-bottom: 100px
 
 .wrapper
   background-image: url('../../assets/images/wrapper-bg.jpg')
@@ -65,6 +79,9 @@ $primary-light: #FDDCC4
       text-decoration: none
       color: #cdcdcd
       position: relative
+      &.active:after
+        opacity: 1
+
       &:after
         content: ''
         height: 3px
@@ -102,7 +119,99 @@ $primary-light: #FDDCC4
     &__text
       width: 460px
       margin-top: 42px
+      color: #cdcdcd
 
     &__button
       margin-top: 42px
+
+.about
+  &-box
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &-information
+    max-width: 430px
+    margin-left: 121px
+
+    &__title
+      max-width: 370px
+
+    &__text
+      margin-top: 25px
+
+.pets
+  background-color: #f6f6f6
+
+  &-inner
+    margin-top: 60px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &-title
+    text-align: center
+    width: 400px
+    margin: 0 auto
+
+  &-wrapper
+    overflow: hidden
+    max-width: 990px
+
+  &-slider
+    display: flex
+    margin: 0 auto
+    flex-wrap: no-wrap
+    transition: left 1s ease-in-out
+    position: relative
+    left: 0
+
+    &__item
+      text-align: center
+      margin-right: 90px
+      background-color: #fff
+      border-radius: 9px
+      cursor: pointer
+      &:hover
+        .button
+          border: 2px solid $primary-light
+          background-color: $primary-light
+
+
+    &__title
+      font-family: Georgia
+      margin-top: 22px
+      font-size: 20px
+      line-height: 23px
+      letter-spacing: 0.06em
+
+    &__button
+      margin: 28px 0
+      background-color: #fff
+      border: 2px solid $primary
+
+  &-arrow
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    background-color: #f6f6f6
+    border: 2px solid $primary
+    position: relative
+    cursor: pointer
+    transition: all .2s
+    &:hover
+      background-color: $primary-light
+      border: 2px solid $primary-light
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  &-link
+    display: block
+    text-align: center
+    margin-top: 60px
+
+  
 
