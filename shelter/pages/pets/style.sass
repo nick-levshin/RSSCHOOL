@@ -142,14 +142,16 @@ a
     line-height: 115%
     letter-spacing: 0.06em
 
-    &.number
-      background-color: $primary
-
     &.enable, &.number 
       border: 2px solid $primary
       cursor: pointer
       color: #292929
-      &:hover
+
+    &.number
+      background-color: $primary
+      cursor: auto
+
+    &.enable:hover
         border: 2px solid $primary-light
         background-color: $primary-light
 

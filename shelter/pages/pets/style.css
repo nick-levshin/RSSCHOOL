@@ -118,14 +118,15 @@ a {
     font-size: 20px;
     line-height: 115%;
     letter-spacing: 0.06em; }
-    .pets-arrow.number {
-      background-color: #F1CDB3; }
     .pets-arrow.enable, .pets-arrow.number {
       border: 2px solid #F1CDB3;
       cursor: pointer;
       color: #292929; }
-      .pets-arrow.enable:hover, .pets-arrow.number:hover {
-        border: 2px solid #FDDCC4;
-        background-color: #FDDCC4; }
+    .pets-arrow.number {
+      background-color: #F1CDB3;
+      cursor: auto; }
+    .pets-arrow.enable:hover {
+      border: 2px solid #FDDCC4;
+      background-color: #FDDCC4; }
 
 /*# sourceMappingURL=style.css.map */
