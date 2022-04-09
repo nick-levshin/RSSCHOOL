@@ -1,0 +1,156 @@
+@import url('../../assets/fonts/Georgia/style.css')
+  
+$primary: #F1CDB3
+$primary-light: #FDDCC4
+
+body 
+  color: #545454
+
+a
+  color: #545454
+  
+.header 
+  padding: 30px 0
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  background-color: #fff
+  z-index: 20
+
+  &-box 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+
+  &-logo
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &__title
+      font-size: 32px
+      line-height: 35.2px
+      letter-spacing: 0.06em
+      font-family: Georgia
+      font-weight: 400
+
+    &__subtitle
+      font-size: 13px
+      line-height: 14.95px
+      letter-spacing: 0.1em
+      margin-top: 10px
+
+  &-nav 
+    width: 443px
+
+  &-menu
+    display: flex
+    justify-content: space-between
+    margin-bottom: 6px
+
+    &__link
+      text-decoration: none
+      position: relative
+      &.active
+        color: #292929
+      &.active:after
+        opacity: 1
+
+      &:after
+        content: ''
+        height: 3px
+        background-color: $primary
+        position: absolute
+        bottom: -7px
+        left: 0
+        right: 0
+        opacity: 0
+        transition: opacity .2s
+
+      &:hover 
+        color: #292929
+        &:after
+          opacity: 1
+
+.pets
+  background-color: #f6f6f6
+  margin-top: 120px
+
+  &-inner
+    margin-top: 60px
+
+  &-title
+    text-align: center
+    font-weight: 400
+
+  &-wrapper
+    overflow: hidden
+    height: 900px
+    margin-bottom: 60px
+
+  &-slider
+    display: grid
+    margin: 0 auto
+    transition: left 1s ease-in-out
+    position: relative
+    left: 0
+    grid-template-rows: repeat(2, 435px)
+    grid-template-columns: repeat(24, 270px)
+    grid-column-gap: 40px
+    grid-row-gap: 30px
+
+    &__item
+      text-align: center
+      background-color: #fff
+      border-radius: 9px
+      cursor: pointer
+      &:hover
+        .button
+          border: 2px solid $primary-light
+          background-color: $primary-light
+
+    &__title
+      font-family: Georgia
+      margin-top: 22px
+      font-size: 20px
+      line-height: 23px
+      letter-spacing: 0.06em
+
+    &__button
+      margin: 28px 0
+      background-color: #fff
+      border: 2px solid $primary
+
+  &-buttons
+    width: 340px
+    display: flex
+    justify-content: space-between
+    margin: 0 auto
+
+  &-arrow
+    width: 52px
+    height: 52px
+    background-color: #f6f6f6
+    border-radius: 50%
+    border: 2px solid #cdcdcd
+    color: #cdcdcd
+    outline: none
+    transition: all .2s
+    font-size: 20px
+    line-height: 115%
+    letter-spacing: 0.06em
+
+    &.number
+      background-color: $primary
+
+    &.enable, &.number 
+      border: 2px solid $primary
+      cursor: pointer
+      color: #292929
+      &:hover
+        border: 2px solid $primary-light
+        background-color: $primary-light
+
+
