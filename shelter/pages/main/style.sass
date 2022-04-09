@@ -1,0 +1,271 @@
+@import url('../../assets/fonts/Georgia/style.css')
+  
+$primary: #F1CDB3
+$primary-light: #FDDCC4
+
+.wrapper
+  background-image: url('../../assets/images/wrapper-bg.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  min-height: 908px
+
+.header 
+  padding-top: 60px
+
+  &-box 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+
+  &-logo
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    &__title
+      color: $primary
+      font-size: 32px
+      line-height: 35.2px
+      letter-spacing: 0.06em
+      font-family: Georgia
+
+    &__subtitle
+      font-size: 13px
+      line-height: 14.95px
+      letter-spacing: 0.1em
+      color: #fff 
+      margin-top: 10px
+
+  &-nav 
+    width: 443px
+
+  &-menu
+    display: flex
+    justify-content: space-between
+    margin-bottom: 6px
+
+    &__link
+      text-decoration: none
+      color: #cdcdcd
+      position: relative
+      &.active:after
+        opacity: 1
+
+      &:after
+        content: ''
+        height: 3px
+        background-color: $primary
+        position: absolute
+        bottom: -7px
+        left: 0
+        right: 0
+        opacity: 0
+        transition: opacity .2s
+
+      &:hover 
+        color: #fff
+        &:after
+          opacity: 1
+
+.main 
+  &-box
+    display: flex
+    justify-content: space-between
+    margin-top: 60px
+    align-items: center
+
+  &-info
+    margin-bottom: 78px
+
+    &__title
+      width: 310px
+      font-size: 44px
+      line-height: 130%
+      color: #fff
+      font-family: Georgia
+      font-weight: 400
+
+    &__text
+      width: 460px
+      margin-top: 42px
+      color: #cdcdcd
+
+    &__button
+      margin-top: 42px
+
+.about
+  &-box
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &-information
+    max-width: 430px
+    margin-left: 121px
+
+    &__title
+      max-width: 370px
+
+    &__text
+      margin-top: 25px
+
+.pets
+  background-color: #f6f6f6
+
+  &-inner
+    margin-top: 60px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &-title
+    text-align: center
+    width: 400px
+    margin: 0 auto
+
+  &-wrapper
+    overflow: hidden
+    max-width: 990px
+
+  &-slider
+    display: flex
+    margin: 0 auto
+    flex-wrap: no-wrap
+    transition: left 1s ease-in-out
+    position: relative
+    left: 0
+
+    &__item
+      text-align: center
+      margin-right: 90px
+      background-color: #fff
+      border-radius: 9px
+      cursor: pointer
+      &:hover
+        .button
+          border: 2px solid $primary-light
+          background-color: $primary-light
+
+
+    &__title
+      font-family: Georgia
+      margin-top: 22px
+      font-size: 20px
+      line-height: 23px
+      letter-spacing: 0.06em
+
+    &__button
+      margin: 28px 0
+      background-color: #fff
+      border: 2px solid $primary
+
+  &-arrow
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    background-color: #f6f6f6
+    border: 2px solid $primary
+    position: relative
+    cursor: pointer
+    transition: all .2s
+    &:hover
+      background-color: $primary-light
+      border: 2px solid $primary-light
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  &-link
+    display: block
+    text-align: center
+    margin-top: 60px
+
+.help
+  &-title
+    width: 310px
+    margin: 0 auto
+    text-align: center
+
+  &-box
+    display: grid
+    grid-template-columns: repeat(20, 1fr)
+    grid-template-rows: repeat(2, 113px)
+    row-gap: 55px
+    margin: 0 auto
+    margin-top: 60px
+    
+
+  &-item
+    text-align: center
+    &:nth-child(-n + 5) 
+      grid-column: span 4
+    &:nth-last-child(4) 
+      grid-row-start: 2
+      grid-column: span 5
+    &:nth-last-child(3) 
+      grid-row-start: 2
+      grid-column: 6 / span 5
+    &:nth-last-child(2) 
+      grid-row-start: 2
+      grid-column: 11 / span 5
+    &:nth-last-child(1) 
+      grid-row-start: 2
+      grid-column: 16/ span 5
+
+    &__image
+      height: 57px
+
+    &__text
+      margin-top: 25px
+      font-size: 20px
+      line-height: 115%
+      letter-spacing: 0.06em
+      font-family: Georgia
+  
+.donation
+  background-color: #f6f6f6
+
+  &-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &-info
+    max-width: 380px
+    margin-left: 30px
+
+    &__title
+      width: 300px
+
+    &__subtitle
+      font-size: 15px
+      line-height: 110%
+      letter-spacing: 0.06em
+      margin: 19px 0
+      color: #545454
+      font-family: Georgia
+
+    &__card
+      display: flex
+      background-color: $primary
+      color: #545454
+      border-radius: 9px
+      padding: 10px 15px
+      font-size: 20px
+      line-height: 115%
+      letter-spacing: 0.06em
+      font-family: Georgia
+      width: 349px
+      justify-content: space-between
+
+    &__text
+      margin-top: 20px
+      font-size: 12px
+      line-height: 18px
+      color: #b2b2b2
+      font-family: Arial
+      font-style: italic
