@@ -3,7 +3,8 @@ const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');
 
 function next() {
-  offset += 1080;
+  const style = items[0].currentStyle || window.getComputedStyle(items[0]);
+  offset += slider.offsetWidth + parseInt(style.marginRight, 10);
   if (offset > slider.scrollWidth) {
     offset = 0;
   }
@@ -12,11 +13,19 @@ function next() {
 }
 
 function prev() {
-  offset -= 1080;
+  let length = 3;
+  let remainder = items.length - (items.length % length || 3);
+  if (window.innerWidth < 1200) {
+    length = 2;
+    remainder = items.length - (items.length % length || 2);
+  }
+
+  const style = items[0].currentStyle || window.getComputedStyle(items[0]);
+
+  offset -= slider.offsetWidth + parseInt(style.marginRight, 10);
   if (offset < 0) {
     offset =
-      items.length * (items[0].offsetWidth + items[1].style.marginRight) -
-      items[1].style.marginRight;
+      remainder * (items[0].offsetWidth + parseInt(style.marginRight, 10));
   }
 
   slider.style.left = -offset + 'px';

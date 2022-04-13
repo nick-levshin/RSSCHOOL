@@ -281,6 +281,34 @@ $primary-light: #FDDCC4
     &-dog
       width: 569px
 
+  .pets
+    &-wrapper
+      max-width: 580px
+
+    &-inner
+      margin-top: 58px
+
+    &-slider__item
+      margin-right: 40px
+
+  .footer
+    padding-top: 31px
+
+    &-wrapper
+      flex-wrap: wrap
+      height: auto
+      padding: 0 34px
+
+    &-contacts:first-child
+      margin-right: 22px
+
+    &-contacts:nth-child(2)
+      margin-right: 22px
+
+    &-image
+      margin: 0 auto
+      margin-top: 65px
+
 @media (max-width: 900px) 
   .about
     &-box
@@ -294,6 +322,30 @@ $primary-light: #FDDCC4
       order: 1
       width: 300px
       margin-top: 80px
+
+  .help
+    &-box
+      grid-template-columns: repeat(3, 1fr)
+      grid-template-rows: repeat(3, 113px)
+      column-gap: 60px
+
+    &-item:nth-child(n)
+      grid-column: auto
+      grid-row-start: auto
+
+  .donation 
+    &-wrapper
+      flex-direction: column
+
+    &-image
+      order: 1
+      margin-top: 60px
+
+    &-info
+      order: 0
+      margin-left: 0
+
+
 
 @media (max-width: 768px) 
   .container
@@ -311,6 +363,14 @@ $primary-light: #FDDCC4
     &-dog
       align-self: end
       margin-top: 22px
+
+  .help
+    &-box
+      padding: 0 40px
+
+  .footer
+    &-contacts:first-child
+      margin-right: 0
 
   
   
