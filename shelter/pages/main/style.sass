@@ -272,3 +272,45 @@ $primary-light: #FDDCC4
       color: #b2b2b2
       font-family: Arial
       font-style: italic
+
+@media (max-width: 1200px) 
+  .main
+    &-box
+      flex-direction: column
+
+    &-dog
+      width: 569px
+
+@media (max-width: 900px) 
+  .about
+    &-box
+      flex-direction: column
+
+    &-information
+      order: 0
+      margin-left: 0
+
+    &-image
+      order: 1
+      width: 300px
+      margin-top: 80px
+
+@media (max-width: 768px) 
+  .container
+    padding: 0 30px
+
+  .header
+    padding-top: 31px
+
+  .main
+    &-info a
+      display: block
+      text-align: center
+      margin-top: -2px
+
+    &-dog
+      align-self: end
+      margin-top: 22px
+
+  
+  
