@@ -19,6 +19,10 @@ function prev() {
     length = 2;
     remainder = items.length - (items.length % length || 2);
   }
+  if (window.innerWidth < 730) {
+    length = 1;
+    remainder = items.length - 1;
+  }
 
   const style = items[0].currentStyle || window.getComputedStyle(items[0]);
 

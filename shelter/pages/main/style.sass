@@ -13,6 +13,17 @@ $primary-light: #FDDCC4
 .header 
   padding-top: 60px
 
+  &-burger
+    display: none
+
+    &__line
+      height: 2px
+      width: 30px
+      background-color: $primary
+      margin-bottom: 8px
+      &:last-child
+        margin-bottom: 0
+
   &-box 
     display: flex
     justify-content: space-between
@@ -39,7 +50,8 @@ $primary-light: #FDDCC4
       margin-top: 10px
 
   &-nav 
-    width: 443px
+    max-width: 443px
+    width: 100%
 
   &-menu
     display: flex
@@ -345,8 +357,6 @@ $primary-light: #FDDCC4
       order: 0
       margin-left: 0
 
-
-
 @media (max-width: 768px) 
   .container
     padding: 0 30px
@@ -372,5 +382,211 @@ $primary-light: #FDDCC4
     &-contacts:first-child
       margin-right: 0
 
+
+@media (max-width: 730px)
+  h2
+    font-size: 25px
+
+  .header
+    &-burger
+      display: flex
+      align-items: end
+      flex-direction: column
+
+    &-nav
+      width: auto
+    
+    &-menu
+      display: none
+
+  .main
+    &-info
+      width: 300px
+
+      &__title
+        text-align: center
+        width: 230px
+        margin: 0 auto
+        letter-spacing: 0.06em
+        font-size: 25px
+
+      &__text
+        width: 100%
+        text-align: center
+
+    &-dog 
+      width: 400px
+      margin-top: 27px
+
+  .about
+    &-box
+      width: 270px
+      margin: 0 auto
+
+    &-information
+      &__title
+        text-align: center
+        width: 230px
+        margin: 0 auto
+
+      &__text
+        text-align: justify
+
+  .pets
+    &-title
+      width: 300px
+
+    &-wrapper
+      order: 0
+
+    &-inner
+      flex-wrap: wrap
+      text-align: center
+      position: relative
+      width: 270px
+      margin: 0 auto
+      margin-top: 42px
+
+    &-slider__item
+      margin-right: 20px
+
+    &-arrow
+      position: absolute
+      bottom: -72px
+
+    &-link
+      margin-top: 114px
+
+    .left
+      order: 1
+      left: 43px
+
+    .right
+      order: 2
+      right: 43px
+
+  .help
+    &-title
+      width: 225px
+
+    &-box
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(5, 113px)
+      column-gap: 21px
+      row-gap: 5px
+      padding: 0
+      margin-top: 40px
+
+    &-item
+      &__text
+        font-size: 15px
+        line-height: 110%
+        margin-top: 13px
+
+      &__image
+        width: 50px
+        height: 50px
   
-  
+  .donation
+    margin-top: -29px
+
+    &-info
+      width: 300px
+
+      &__title
+        text-align: center
+        width: 225px
+        margin: 0 auto
+
+      &__subtitle
+        letter-spacing: normal
+        margin-top: 22px
+        text-align: center
+
+      &__text
+        text-align: justify
+        width: 281px
+        margin: 0 auto
+        margin-top: 20px
+
+      &__card
+        width: 300px
+        font-size: 15px
+        align-items: center
+        width: 281px
+        margin: 0 auto
+        margin-top: 23px
+
+    &-image
+      width: 260px
+      margin-top: 43px
+
+  .footer
+    &-wrapper
+      flex-direction: column
+      padding: 0
+
+    &-contacts
+      width: 100%
+      text-align: center
+      margin-bottom: 40px
+      margin-right: 0
+      &:nth-child(n)
+        margin-right: 0
+
+      &__title
+        font-size: 25px
+        &.last
+          width: 270px
+          margin: 0 auto
+      
+      a 
+        text-align: center
+        width: 300px
+        justify-content: center
+        margin: 0 auto
+
+      &__phone
+        margin-top: 42px !important
+
+      &__email
+        margin-top: 42px !important
+
+      &__location
+        margin-top: 39px !important
+
+        span
+          width: 279px
+
+    &-image
+      margin-top: 40px
+      width: 260px
+     
+@media (max-width: 400px) 
+  .container
+    padding: 0 10px
+
+  section
+    padding: 42px 0
+
+  .header
+    &-box
+      justify-content: start
+
+    &-logo
+      margin-right: 41px
+
+  .wrapper
+    min-height: auto
+
+  .main
+    &-dog 
+      width: 260px
+
+  .about
+    &-image
+      width: 260px
+      margin-top: 38px
+
+  .footer-image
+    margin-top: 1px
