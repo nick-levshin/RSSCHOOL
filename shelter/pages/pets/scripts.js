@@ -7,14 +7,20 @@ const singleNextBtn = document.querySelector('.right-single');
 const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');
 
-const itemsPerPage = 8;
+let itemsPerPage = 8;
+if (window.innerWidth < 1280) {
+  itemsPerPage = 6;
+}
+if (window.innerWidth < 731) {
+  itemsPerPage = 3;
+}
 
 function next() {
   if (!nextBtn.classList.contains('enable')) {
     return;
   }
 
-  offset = slider.scrollWidth - 1200;
+  offset = slider.scrollWidth - slider.offsetWidth;
   slider.style.left = -offset + 'px';
 
   if (!prevBtn.classList.contains('enable')) {
@@ -29,13 +35,13 @@ function next() {
 }
 
 function nextSingle() {
+  const style = slider.currentStyle || window.getComputedStyle(slider);
+
   if (!nextBtn.classList.contains('enable')) {
     return;
   }
 
-  if (offset < slider.scrollWidth) {
-    offset += 1200 + 40;
-  }
+  offset += slider.offsetWidth + parseInt(style.columnGap, 10);
 
   slider.style.left = -offset + 'px';
 
@@ -72,13 +78,13 @@ function prev() {
 }
 
 function prevSingle() {
+  const style = slider.currentStyle || window.getComputedStyle(slider);
+
   if (!prevBtn.classList.contains('enable')) {
     return;
   }
 
-  if (offset > 0) {
-    offset -= 1200 + 40;
-  }
+  offset -= slider.offsetWidth + parseInt(style.columnGap, 10);
 
   slider.style.left = -offset + 'px';
 
