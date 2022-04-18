@@ -18,6 +18,17 @@ a
   background-color: #fff
   z-index: 20
 
+  &-burger
+    display: none
+
+    &__line
+      height: 2px
+      width: 30px
+      background-color: #000
+      margin-bottom: 8px
+      &:last-child
+        margin-bottom: 0
+
   &-box 
     display: flex
     justify-content: space-between
@@ -155,4 +166,143 @@ a
         border: 2px solid $primary-light
         background-color: $primary-light
 
+@media (max-width: 1279px) 
+  .pets
+    &-slider
+      grid-template-rows: repeat(3, 435px)
+      grid-template-columns: repeat(16, 270px)
 
+    &-wrapper
+      height: 1365px
+      max-width: 580px
+      margin: 0 auto
+      margin-bottom: 40px
+
+@media (max-width: 1200px) 
+  .footer
+    padding-top: 31px
+
+    &-wrapper
+      flex-wrap: wrap
+      height: auto
+      padding: 0 34px
+
+    &-contacts:first-child
+      margin-right: 22px
+
+    &-contacts:nth-child(2)
+      margin-right: 22px
+
+    &-image
+      margin: 0 auto
+      margin-top: 65px
+
+@media (max-width: 768px) 
+  section
+    padding-bottom: 74px
+    
+  .container
+    padding: 0 30px
+
+  .header
+    padding-top: 31px
+
+  .pets
+    &-inner
+      margin-top: 30px
+
+  .footer
+    &-contacts:first-child
+      margin-right: 0
+
+@media (max-width: 730px)
+  h2
+    font-size: 25px
+
+  .header
+    &-burger
+      display: flex
+      align-items: end
+      flex-direction: column
+
+    &-nav
+      width: auto
+    
+    &-menu
+      display: none
+
+  .pets
+    &-wrapper
+      max-width: 270px
+      margin-bottom: 42px
+
+    &-buttons
+      width: 300px
+
+  .footer
+    &-wrapper
+      flex-direction: column
+      padding: 0
+
+    &-contacts
+      width: 100%
+      text-align: center
+      margin-bottom: 40px
+      margin-right: 0
+      &:nth-child(n)
+        margin-right: 0
+
+      &__title
+        font-size: 25px
+        width: 270px
+        margin: 0 auto
+
+        &.last
+          width: 270px
+          margin: 0 auto
+      
+      a 
+        text-align: center
+        width: 300px
+        justify-content: center
+        margin: 0 auto
+
+      &__phone
+        margin-top: 42px !important
+
+      &__email
+        margin-top: 42px !important
+
+      &__location
+        margin-top: 39px !important
+
+        span
+          width: 279px
+
+    &-image
+      margin-top: 40px
+      width: 260px
+
+@media (max-width: 400px) 
+  .container
+    padding: 0 10px
+
+  section
+    padding: 42px 0
+
+  .header
+    &-box
+      justify-content: start
+
+    &-logo
+      margin-right: 41px
+
+  .pets
+    &-inner
+      margin-top: 41px
+
+  .footer-image
+    margin-top: 1px
+
+  .footer-contacts__location-icon
+    margin-right: 0
