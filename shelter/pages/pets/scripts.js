@@ -1,3 +1,9 @@
+const petsJSON = import('../pets.json', {
+  assert: {
+    type: 'json',
+  },
+});
+
 let offset = 0;
 const number = document.querySelector('.number');
 const prevBtn = document.querySelector('.left');
@@ -99,4 +105,114 @@ function prevSingle() {
     nextBtn.classList.toggle('enable');
     singleNextBtn.classList.toggle('enable');
   }
+}
+
+petsJSON.then((pets) => {
+  const random1 = shuffle(pets.default.slice(0, 4));
+  for (let i = 0; i < 4; i++) {
+    random1.forEach((pet) => {
+      const sliderInner = `
+          <img
+            src="${pet.img}"
+            alt="${pet.name}"
+            class="pets-slider__image"
+          />
+          <p class="pets-slider__title">${pet.name}</p>
+          <button class="pets-slider__button button">Learn more</button>
+      `;
+
+      const sliderItem = document.createElement('div');
+      sliderItem.classList.add('pets-slider__item');
+      sliderItem.insertAdjacentHTML('afterbegin', sliderInner);
+
+      slider.append(sliderItem);
+    });
+  }
+
+  for (let i = 0; i < 2; i++) {
+    []
+      .concat(random1)
+      .reverse()
+      .forEach((pet) => {
+        const sliderInner = `
+          <img
+            src="${pet.img}"
+            alt="${pet.name}"
+            class="pets-slider__image"
+          />
+          <p class="pets-slider__title">${pet.name}</p>
+          <button class="pets-slider__button button">Learn more</button>
+      `;
+
+        const sliderItem = document.createElement('div');
+        sliderItem.classList.add('pets-slider__item');
+        sliderItem.insertAdjacentHTML('afterbegin', sliderInner);
+
+        slider.append(sliderItem);
+      });
+  }
+
+  const random2 = shuffle(pets.default.slice(4));
+  for (let i = 0; i < 4; i++) {
+    random2.forEach((pet) => {
+      const sliderInner = `
+          <img
+            src="${pet.img}"
+            alt="${pet.name}"
+            class="pets-slider__image"
+          />
+          <p class="pets-slider__title">${pet.name}</p>
+          <button class="pets-slider__button button">Learn more</button>
+      `;
+
+      const sliderItem = document.createElement('div');
+      sliderItem.classList.add('pets-slider__item');
+      sliderItem.insertAdjacentHTML('afterbegin', sliderInner);
+
+      slider.append(sliderItem);
+    });
+  }
+
+  for (let i = 0; i < 2; i++) {
+    []
+      .concat(random2)
+      .reverse()
+      .forEach((pet) => {
+        const sliderInner = `
+          <img
+            src="${pet.img}"
+            alt="${pet.name}"
+            class="pets-slider__image"
+          />
+          <p class="pets-slider__title">${pet.name}</p>
+          <button class="pets-slider__button button">Learn more</button>
+      `;
+
+        const sliderItem = document.createElement('div');
+        sliderItem.classList.add('pets-slider__item');
+        sliderItem.insertAdjacentHTML('afterbegin', sliderInner);
+
+        slider.append(sliderItem);
+      });
+  }
+});
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
 }
