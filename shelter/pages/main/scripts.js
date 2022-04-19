@@ -2,6 +2,14 @@ const petsJSON = fetch('../pets.json').then((response) => {
   return response.json();
 });
 
+window.addEventListener(
+  `resize`,
+  (event) => {
+    slider.style.left = 0;
+  },
+  false
+);
+
 let offset = 0;
 const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');

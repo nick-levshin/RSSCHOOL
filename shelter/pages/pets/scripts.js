@@ -11,6 +11,14 @@ const singleNextBtn = document.querySelector('.right-single');
 const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');
 
+window.addEventListener(
+  `resize`,
+  (event) => {
+    slider.style.left = 0;
+  },
+  false
+);
+
 let itemsPerPage = 8;
 if (window.innerWidth < 1280) {
   itemsPerPage = 6;
