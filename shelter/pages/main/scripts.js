@@ -1,7 +1,5 @@
-const petsJSON = import('../pets.json', {
-  assert: {
-    type: 'json',
-  },
+const petsJSON = fetch('../pets.json').then((response) => {
+  return response.json();
 });
 
 let offset = 0;
@@ -42,7 +40,7 @@ function prev() {
 }
 
 petsJSON.then((pets) => {
-  shuffle(pets.default).forEach((pet) => {
+  shuffle(pets).forEach((pet) => {
     const sliderInner = `
     <img
       src="${pet.img}"

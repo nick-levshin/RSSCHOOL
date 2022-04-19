@@ -1,7 +1,5 @@
-const petsJSON = import('../pets.json', {
-  assert: {
-    type: 'json',
-  },
+const petsJSON = fetch('../pets.json').then((response) => {
+  return response.json();
 });
 
 let offset = 0;
@@ -108,7 +106,7 @@ function prevSingle() {
 }
 
 petsJSON.then((pets) => {
-  const random1 = shuffle(pets.default.slice(0, 4));
+  const random1 = shuffle(pets.slice(0, 4));
   for (let i = 0; i < 4; i++) {
     random1.forEach((pet) => {
       const sliderInner = `
@@ -152,7 +150,7 @@ petsJSON.then((pets) => {
       });
   }
 
-  const random2 = shuffle(pets.default.slice(4));
+  const random2 = shuffle(pets.slice(4));
   for (let i = 0; i < 4; i++) {
     random2.forEach((pet) => {
       const sliderInner = `
