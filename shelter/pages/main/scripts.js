@@ -1,8 +1,14 @@
-const petsJSON = import('../pets.json', {
-  assert: {
-    type: 'json',
-  },
+const petsJSON = fetch('../pets.json').then((response) => {
+  return response.json();
 });
+
+window.addEventListener(
+  `resize`,
+  (event) => {
+    slider.style.left = 0;
+  },
+  false
+);
 
 let offset = 0;
 const slider = document.querySelector('.pets-slider');
@@ -42,7 +48,7 @@ function prev() {
 }
 
 petsJSON.then((pets) => {
-  shuffle(pets.default).forEach((pet) => {
+  shuffle(pets).forEach((pet) => {
     const sliderInner = `
     <img
       src="${pet.img}"

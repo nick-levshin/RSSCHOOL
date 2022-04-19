@@ -1,7 +1,5 @@
-const petsJSON = import('../pets.json', {
-  assert: {
-    type: 'json',
-  },
+const petsJSON = fetch('../pets.json').then((response) => {
+  return response.json();
 });
 
 let offset = 0;
@@ -12,6 +10,14 @@ const nextBtn = document.querySelector('.right');
 const singleNextBtn = document.querySelector('.right-single');
 const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');
+
+window.addEventListener(
+  `resize`,
+  (event) => {
+    slider.style.left = 0;
+  },
+  false
+);
 
 let itemsPerPage = 8;
 if (window.innerWidth < 1280) {
@@ -108,7 +114,7 @@ function prevSingle() {
 }
 
 petsJSON.then((pets) => {
-  const random1 = shuffle(pets.default.slice(0, 4));
+  const random1 = shuffle(pets.slice(0, 4));
   for (let i = 0; i < 4; i++) {
     random1.forEach((pet) => {
       const sliderInner = `
@@ -152,7 +158,7 @@ petsJSON.then((pets) => {
       });
   }
 
-  const random2 = shuffle(pets.default.slice(4));
+  const random2 = shuffle(pets.slice(4));
   for (let i = 0; i < 4; i++) {
     random2.forEach((pet) => {
       const sliderInner = `
