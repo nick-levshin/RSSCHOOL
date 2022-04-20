@@ -1,3 +1,4 @@
+// Slider
 const petsJSON = fetch('../pets.json').then((response) => {
   return response.json();
 });
@@ -221,4 +222,30 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+// Burger
+// Burger
+const burger = document.querySelector('.header-burger');
+const menu = document.querySelector('.header-menu');
+const overlay = document.querySelector('.overlay');
+
+burger.addEventListener('click', slideMenu);
+overlay.addEventListener('click', slideMenu);
+
+const links = document.getElementsByClassName('header-menu__item');
+[...links].forEach((link) => link.addEventListener('click', checkLink));
+
+function slideMenu() {
+  menu.classList.toggle('compressed');
+  burger.classList.toggle('rotated');
+  overlay.classList.toggle('active');
+
+  if (!document.body.style.overflow || document.body.style.overflow === 'auto')
+    document.body.style.overflow = 'hidden';
+  else document.body.style.overflow = 'auto';
+}
+
+function checkLink() {
+  if (menu.classList.contains('compressed')) slideMenu();
 }

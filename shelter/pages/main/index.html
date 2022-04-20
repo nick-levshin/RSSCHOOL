@@ -15,6 +15,7 @@
     />
   </head>
   <body>
+    <div class="overlay"></div>
     <div class="wrapper">
       <header class="header">
         <div class="container">
@@ -63,11 +64,11 @@
                 extremely wide and open heart. He or she will love you more than
                 anybody else in the world, you will see!
               </p>
-              <a href="#pets"
-                ><button class="main-info__button button">
-                  Make a friend
-                </button></a
-              >
+              <div class="main-center">
+                <button class="main-info__button button">
+                  <a href="#pets">Make a friend</a>
+                </button>
+              </div>
             </div>
             <img src="../../assets/images/dog.png" alt="dog" class="main-dog" />
           </div>
@@ -120,9 +121,13 @@
             <img src="../../assets/images/arrow-right.svg" alt="right" />
           </button>
         </div>
-        <a class="pets-link" href="../pets/index.html">
-          <button class="pets-button button">Get to know the rest</button>
-        </a>
+        <div class="pets-center">
+          <button class="pets-button button">
+            <a class="pets-link" href="../pets/index.html"
+              >Get to know the rest</a
+            >
+        </div>
+        </button>
       </div>
     </section>
 
@@ -254,7 +259,7 @@
               />
               <span class="footer-contacs__email-text">email@shelter.com</span>
             </a>
-            <a href="tel:+13 674 567 75 54" class="footer-contacts__phone">
+            <a href="tel:+136745677554" class="footer-contacts__phone">
               <img
                 src="../../assets/images/phone.svg"
                 alt="phone"
