@@ -83,7 +83,7 @@ section {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  height: 310px;
+  height: 393px;
 }
 .footer-contacts__location,
 .footer-contacts__phone,
@@ -114,5 +114,4 @@ section {
 }
 .footer-image {
   margin-top: -18px;
-  margin-right: -6px;
 }
