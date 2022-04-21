@@ -24,7 +24,7 @@ let itemsPerPage = 8;
 if (window.innerWidth < 1280) {
   itemsPerPage = 6;
 }
-if (window.innerWidth < 731) {
+if (window.innerWidth < 768) {
   itemsPerPage = 3;
 }
 

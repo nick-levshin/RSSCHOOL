@@ -448,6 +448,39 @@ $primary-light: #FDDCC4
       &.compressed
         transform: translateX(0)
 
+  .pets
+    &-title
+      width: 300px
+
+    &-wrapper
+      order: 0
+
+    &-inner
+      flex-wrap: wrap
+      text-align: center
+      position: relative
+      width: 270px
+      margin: 0 auto
+      margin-top: 42px
+
+    &-slider__item
+      margin-right: 20px
+
+    &-arrow
+      position: absolute
+      bottom: -72px
+
+    &-button
+      margin-top: 114px
+
+    .left
+      order: 1
+      left: 43px
+
+    .right
+      order: 2
+      right: 43px
+
 @media (max-width: 730px)
   h2
     font-size: 25px
@@ -484,39 +517,6 @@ $primary-light: #FDDCC4
 
       &__text
         text-align: justify
-
-  .pets
-    &-title
-      width: 300px
-
-    &-wrapper
-      order: 0
-
-    &-inner
-      flex-wrap: wrap
-      text-align: center
-      position: relative
-      width: 270px
-      margin: 0 auto
-      margin-top: 42px
-
-    &-slider__item
-      margin-right: 20px
-
-    &-arrow
-      position: absolute
-      bottom: -72px
-
-    &-button
-      margin-top: 114px
-
-    .left
-      order: 1
-      left: 43px
-
-    .right
-      order: 2
-      right: 43px
 
   .help
     &-title
