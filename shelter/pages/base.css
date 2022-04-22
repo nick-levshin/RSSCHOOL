@@ -65,6 +65,96 @@ section {
   padding-bottom: 100px;
 }
 
+.popup {
+  width: 952px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: #000;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  font-family: Georgia;
+  z-index: 30;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 25;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.popup-close {
+  align-self: end;
+  background-color: transparent;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #292929;
+  border: 2px solid #f1cdb3;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.popup-inner {
+  background-color: #fff;
+  border-radius: 9px;
+  display: flex;
+  width: 900px;
+}
+
+.popup-img {
+  width: 500px;
+  height: 500px;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.popup-info {
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-left: 29px;
+}
+
+.popup-info__title {
+  font-size: 35px;
+  line-height: 130%;
+}
+
+.popup-info__subtitle {
+  font-size: 20px;
+  line-height: 115%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.popup-info__list {
+  margin-top: 40px;
+}
+
+.popup-info__list-item {
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.popup-info__list-item::marker {
+  color: #f1cdb3;
+}
+
 .footer {
   padding-top: 57px;
   background-image: url('../assets/images/footer-bg.jpg');
@@ -114,4 +204,65 @@ section {
 }
 .footer-image {
   margin-top: -18px;
+}
+
+@media (max-width: 1279px) {
+  .popup {
+    width: 682px;
+    font-size: 13px;
+  }
+
+  .popup-inner {
+    width: 630px;
+  }
+
+  .popup-img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .popup-info {
+    padding-top: 10px;
+    padding-right: 9px;
+    padding-left: 11px;
+  }
+
+  .popup-info__subtitle {
+    margin-bottom: 20px;
+  }
+
+  .popup-info__list {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .popup-info__list-item {
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    width: 271px;
+  }
+
+  .popup-inner {
+    width: 240px;
+  }
+
+  .popup-img {
+    display: none;
+  }
+
+  .popup-info {
+    padding: 10px;
+  }
+
+  .popup-info__title {
+    text-align: center;
+  }
+
+  .popup-info__subtitle {
+    text-align: center;
+  }
 }

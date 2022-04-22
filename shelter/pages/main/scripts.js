@@ -1,3 +1,8 @@
+import { scrollInto } from '../scroll.js';
+import { popup } from '../popup.js';
+
+scrollInto();
+
 // Slider
 const petsJSON = fetch('../pets.json').then((response) => {
   return response.json();
@@ -18,6 +23,9 @@ window.addEventListener(
 let offset = 0;
 const slider = document.querySelector('.pets-slider');
 const items = slider.getElementsByClassName('pets-slider__item');
+
+document.querySelector('.left').addEventListener('click', prev);
+document.querySelector('.right').addEventListener('click', next);
 
 function next() {
   const style = items[0].currentStyle || window.getComputedStyle(items[0]);
@@ -77,6 +85,11 @@ petsJSON.then((pets) => {
       slider.append(item.cloneNode(true));
     });
   }
+
+  // Popup
+  [...items].forEach((item) => {
+    item.addEventListener('click', (event) => popup(event, pets));
+  });
 });
 
 function shuffle(array) {
