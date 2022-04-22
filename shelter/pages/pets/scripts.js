@@ -1,3 +1,5 @@
+import { popup } from '../popup.js';
+
 // Slider
 const petsJSON = fetch('../pets.json').then((response) => {
   return response.json();
@@ -14,8 +16,14 @@ const items = slider.getElementsByClassName('pets-slider__item');
 
 window.addEventListener(
   `resize`,
-  (event) => {
+  () => {
     slider.style.left = 0;
+    if (window.innerWidth < 1280) {
+      itemsPerPage = 6;
+    }
+    if (window.innerWidth < 768) {
+      itemsPerPage = 3;
+    }
   },
   false
 );
@@ -27,6 +35,11 @@ if (window.innerWidth < 1280) {
 if (window.innerWidth < 768) {
   itemsPerPage = 3;
 }
+
+document.querySelector('.left').addEventListener('click', prev);
+document.querySelector('.right').addEventListener('click', next);
+document.querySelector('.left-single').addEventListener('click', prevSingle);
+document.querySelector('.right-single').addEventListener('click', nextSingle);
 
 function next() {
   if (!nextBtn.classList.contains('enable')) {
@@ -202,6 +215,11 @@ petsJSON.then((pets) => {
         slider.append(sliderItem);
       });
   }
+
+  // Popup
+  [...items].forEach((item) => {
+    item.addEventListener('click', (event) => popup(event, pets));
+  });
 });
 
 function shuffle(array) {
@@ -224,7 +242,6 @@ function shuffle(array) {
   return array;
 }
 
-// Burger
 // Burger
 const burger = document.querySelector('.header-burger');
 const menu = document.querySelector('.header-menu');
