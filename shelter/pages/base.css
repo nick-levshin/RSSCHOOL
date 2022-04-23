@@ -66,14 +66,13 @@ section {
 }
 
 .popup {
-  width: 952px;
-  display: flex;
-  flex-direction: column;
+  width: 900px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: transparent;
+  background-color: #fff;
+  display: flex;
   color: #000;
   font-size: 15px;
   line-height: 110%;
@@ -82,6 +81,7 @@ section {
   z-index: 30;
   opacity: 0;
   transition: opacity 0.3s;
+  border-radius: 9px;
 }
 
 .shadow {
@@ -97,7 +97,6 @@ section {
 }
 
 .popup-close {
-  align-self: end;
   background-color: transparent;
   width: 52px;
   height: 52px;
@@ -107,13 +106,9 @@ section {
   outline: none;
   cursor: pointer;
   transition: all 0.2s;
-}
-
-.popup-inner {
-  background-color: #fff;
-  border-radius: 9px;
-  display: flex;
-  width: 900px;
+  position: absolute;
+  top: -52px;
+  right: -42px;
 }
 
 .popup-img {
@@ -208,12 +203,12 @@ section {
 
 @media (max-width: 1279px) {
   .popup {
-    width: 682px;
+    width: 630px;
     font-size: 13px;
   }
 
-  .popup-inner {
-    width: 630px;
+  .popup-close {
+    right: -43px;
   }
 
   .popup-img {
@@ -243,11 +238,11 @@ section {
 
 @media (max-width: 767px) {
   .popup {
-    width: 271px;
+    width: 240px;
   }
 
-  .popup-inner {
-    width: 240px;
+  .popup-close {
+    right: -30px;
   }
 
   .popup-img {

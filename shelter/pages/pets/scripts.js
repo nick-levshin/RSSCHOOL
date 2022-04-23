@@ -18,6 +18,11 @@ window.addEventListener(
   `resize`,
   () => {
     slider.style.left = 0;
+    number.innerHTML = '1';
+    prevBtn.classList.remove('enable');
+    singlePrevBtn.classList.remove('enable');
+    nextBtn.classList.add('enable');
+    singleNextBtn.classList.add('enable');
     if (window.innerWidth < 1280) {
       itemsPerPage = 6;
     }

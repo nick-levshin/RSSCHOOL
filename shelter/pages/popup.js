@@ -8,27 +8,23 @@ export function popup(event, pets) {
   popup.classList.add('popup');
   const popupHTML = `
     <button class="popup-close"><img src="../../assets/images/close.svg" alt="close" /></button>
-    <div class="popup-inner">
-      <img src="${pet.img}" alt="${pet.name}" class="popup-img" />
-      <div class="popup-info">
-        <p class="popup-info__title">${pet.name}</p>
-        <p class="popup-info__subtitle">${pet.type} - ${pet.breed}</p>
-        <p class="popup-info__text">${pet.description}</p>
-        <ul class="popup-info__list">
-          <li class="popup-info__list-item"><strong>Age:</strong> ${
-            pet.age
-          }</li>
-          <li class="popup-info__list-item"><strong>Inoculations:</strong> ${pet.inoculations.join(
-            ''
-          )}</li>
-          <li class="popup-info__list-item"><strong>Diseases:</strong> ${pet.diseases.join(
-            ''
-          )}</li>
-          <li class="popup-info__list-item"><strong>Parasites:</strong> ${pet.parasites.join(
-            ''
-          )}</li>
-        </ul>
-      </div>
+    <img src="${pet.img}" alt="${pet.name}" class="popup-img" />
+    <div class="popup-info">
+      <p class="popup-info__title">${pet.name}</p>
+      <p class="popup-info__subtitle">${pet.type} - ${pet.breed}</p>
+      <p class="popup-info__text">${pet.description}</p>
+      <ul class="popup-info__list">
+        <li class="popup-info__list-item"><strong>Age:</strong> ${pet.age}</li>
+        <li class="popup-info__list-item"><strong>Inoculations:</strong> ${pet.inoculations.join(
+          ''
+        )}</li>
+        <li class="popup-info__list-item"><strong>Diseases:</strong> ${pet.diseases.join(
+          ''
+        )}</li>
+        <li class="popup-info__list-item"><strong>Parasites:</strong> ${pet.parasites.join(
+          ''
+        )}</li>
+      </ul>
     </div>
   `;
   popup.insertAdjacentHTML('afterbegin', popupHTML);
@@ -46,18 +42,15 @@ export function popup(event, pets) {
   const close = document.querySelector('.popup-close');
   shadow.addEventListener('click', () => removePopup(popup, shadow));
 
-  popup
-    .querySelector('.popup-inner')
-    .addEventListener(
-      'mouseout',
-      () => (close.style.backgroundColor = '#f1cdb3')
-    );
-  popup
-    .querySelector('.popup-inner')
-    .addEventListener(
-      'mouseover',
-      () => (close.style.backgroundColor = 'transparent')
-    );
+  popup.addEventListener(
+    'mouseout',
+    () => (close.style.backgroundColor = '#f1cdb3')
+  );
+  popup.addEventListener('mouseover', (event) => {
+    if (event.target !== close && event.target !== close.querySelector('img'))
+      close.style.backgroundColor = 'transparent';
+  });
+
   close.addEventListener('click', () => removePopup(popup, shadow));
 
   document.body.style.overflow = 'hidden';
