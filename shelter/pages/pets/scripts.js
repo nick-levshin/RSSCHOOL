@@ -251,6 +251,7 @@ function shuffle(array) {
 const burger = document.querySelector('.header-burger');
 const menu = document.querySelector('.header-menu');
 const overlay = document.querySelector('.overlay');
+const header = document.querySelector('.header');
 
 burger.addEventListener('click', slideMenu);
 overlay.addEventListener('click', slideMenu);
@@ -263,9 +264,18 @@ function slideMenu() {
   burger.classList.toggle('rotated');
   overlay.classList.toggle('active');
 
-  if (!document.body.style.overflow || document.body.style.overflow === 'auto')
+  if (
+    !document.body.style.overflow ||
+    document.body.style.overflow === 'auto'
+  ) {
     document.body.style.overflow = 'hidden';
-  else document.body.style.overflow = 'auto';
+    header.style.backgroundColor = '#7c7c7c';
+    header.querySelector('.header-logo').style.color = '#000';
+  } else {
+    document.body.style.overflow = 'auto';
+    header.style.backgroundColor = '#fff';
+    header.querySelector('.header-logo').style.color = '#545454';
+  }
 }
 
 function checkLink() {

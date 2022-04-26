@@ -46,6 +46,10 @@ export function popup(event, pets) {
     'mouseout',
     () => (close.style.backgroundColor = '#f1cdb3')
   );
+  shadow.addEventListener(
+    'mousemove',
+    () => (close.style.backgroundColor = '#f1cdb3')
+  );
   popup.addEventListener('mouseover', (event) => {
     if (event.target !== close && event.target !== close.querySelector('img'))
       close.style.backgroundColor = 'transparent';
